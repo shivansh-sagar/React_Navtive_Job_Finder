@@ -5,6 +5,14 @@
       "bundler": "metro"
     },
     "name": "react_native_jobs",
-    "slug": "react_native_jobs"
+    "slug": "react_native_jobs",
+    "extra": {
+      "eas": {
+        "projectId": "ce918347-16dd-4990-8351-5607a7945b69"
+      }
+    },
+    "android": {
+      "package": "com.badass1901.react_native_jobs"
+    }
   }
 }

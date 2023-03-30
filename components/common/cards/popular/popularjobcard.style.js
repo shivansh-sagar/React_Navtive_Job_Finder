@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   logoImage: {
     width: "70%",
     height: "70%",
+    borderRadius: SIZES.medium,
   },
   companyName: {
     fontSize: SIZES.medium,

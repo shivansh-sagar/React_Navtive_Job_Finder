@@ -10,9 +10,11 @@ const useFetch = (endpoint, query) => {
     method: "GET",
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      "X-RapidAPI-Key": "5bc8b8ed61msh615934116999f24p17f4dbjsn8172e9be3248",
+      "X-RapidAPI-Key": "KJwZZIJSFimshuivMSVGaiYzkRomp15f2vKjsnK4bKzuUzVLzA",
       "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
     },
+
+    // || "5bc8b8ed61msh615934116999f24p17f4dbjsn8172e9be3248"
     params: { ...query },
   };
   //   query: "Python developer in Texas, USA",
@@ -46,4 +48,4 @@ const useFetch = (endpoint, query) => {
   return { data, isLoading, error, refetch };
 };
 
-export default useEffect;
+export default useFetch;

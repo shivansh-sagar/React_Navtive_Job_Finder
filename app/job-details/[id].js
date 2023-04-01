@@ -41,11 +41,32 @@ const JobDetails = () => {
         return (
           <Specifics
             title="Qualifications"
-            points={data[0].job_highlights?.qualifications ?? ["N/A"]}
+            points={
+              data[0].job_highlights?.Qualifications ?? [
+                "No data provided by the Recruiter",
+              ]
+            }
           />
         );
       case "About":
+        return (
+          <JobAbout
+            info={
+              data[0].job_description ?? "No data provided by the Recruiter"
+            }
+          />
+        );
       case "Responsibilities":
+        return (
+          <Specifics
+            title="Responsibilities"
+            points={
+              data[0].job_highlights?.Responsibilities ?? [
+                "Not provided by the Recruiter",
+              ]
+            }
+          />
+        );
       default:
         break;
     }

@@ -2,6 +2,7 @@ import React from "react";
 import {
   Text,
   View,
+  Share,
   SafeAreaView,
   ScrollView,
   ActivityIndicator,
@@ -33,8 +34,26 @@ const JobDetails = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   const onRefresh = () => {
-    alert("refreshing");
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
   };
+
+  const onShare = async () => {
+    const result = await Share.share({
+      message:
+        data[0].job_title +
+        " - " +
+        data[0].employer_name +
+        " - " +
+        data[0].job_country +
+        " - " +
+        data[0]?.job_description +
+        " - " +
+        data[0]?.job_google_link,
+    });
+  };
+
   const displayTabContent = () => {
     switch (activeTab) {
       case "Qualtifications":
@@ -92,7 +111,7 @@ const JobDetails = () => {
             <ScreenHeaderBtn
               iconUrl={icons.share}
               dimension="60%"
-              handlePress={() => router.back()}
+              handlePress={onShare}
             />
           ),
         }}

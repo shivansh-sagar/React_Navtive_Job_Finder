@@ -2,17 +2,39 @@
   "expo": {
     "scheme": "acme",
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
     },
-    "name": "react_native_jobs",
+    "name": "Job Hunter",
     "slug": "react_native_jobs",
+    "version": "1.0.2",
+    "description": "A job hunting app which helps you find jobs in your area and apply for them. Created by Shashwat Sagar",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "extra": {
       "eas": {
         "projectId": "ce918347-16dd-4990-8351-5607a7945b69"
       }
     },
     "android": {
-      "package": "com.badass1901.react_native_jobs"
-    }
+      "package": "com.badass1901.react_native_jobs",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.badass1901.react-native-jobs",
+      "supportsTablet": true
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"]
   }
 }

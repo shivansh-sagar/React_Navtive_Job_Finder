@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,11 +6,18 @@ import {
   Image,
   Linking,
   ToastAndroid,
+  Modal,
 } from "react-native";
 import { icons } from "../../../constants";
 import styles from "./footer.style";
+import { WebView } from "react-native-webview";
 
 const Footer = ({ url }) => {
+  const [visible, setVisible] = useState(false);
+  const openLinkInWebView = () => {
+    setVisible(true);
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -25,12 +32,23 @@ const Footer = ({ url }) => {
           style={styles.likeBtnImage}
         />
       </TouchableOpacity>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.applyBtn}
         onPress={() => Linking.openURL(url)}
       >
         <Text style={styles.applyBtnText}>Apply Now</Text>
+      </TouchableOpacity> */}
+      <TouchableOpacity style={styles.applyBtn} onPress={openLinkInWebView}>
+        <Text style={styles.applyBtnText}>Apply Now</Text>
       </TouchableOpacity>
+      <Modal
+        visible={visible}
+        presentationStyle={"pageSheet"}
+        animationType={"slide"}
+        onRequestClose={() => setVisible(false)}
+      >
+        <WebView source={{ uri: url }} />
+      </Modal>
     </View>
   );
 };

@@ -15,6 +15,7 @@ import {
   JobAbout,
   JobFooter,
   JobTabs,
+  // OpenWeb,
   ScreenHeaderBtn,
   Specifics,
 } from "../../components";
@@ -147,7 +148,12 @@ const JobDetails = () => {
             </View>
           )}
         </ScrollView>
-
+        {/* <OpenWeb
+          url={
+            data[0]?.job_google_link ??
+            "https://careers.google.com/jobs/results"
+          }
+        /> */}
         <JobFooter
           url={
             data[0]?.job_google_link ??

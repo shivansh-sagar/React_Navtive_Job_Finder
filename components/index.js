@@ -10,6 +10,7 @@ import Company from "./jobdetails/company/Company";
 import { default as JobTabs } from "./jobdetails/tabs/Tabs";
 import { default as JobAbout } from "./jobdetails/about/About";
 import { default as JobFooter } from "./jobdetails/footer/Footer";
+import { default as OpenWeb } from "./jobdetails/openweb/OpenWeb";
 import Specifics from "./jobdetails/specifics/Specifics";
 
 // common
@@ -24,6 +25,7 @@ export {
   JobTabs,
   JobAbout,
   JobFooter,
+  OpenWeb,
   Specifics,
-  NearbyJobCard
+  NearbyJobCard,
 };
